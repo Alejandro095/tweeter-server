@@ -2,11 +2,13 @@ const {PREFIX, ROUTES} = require("./../routes/index")
 
 module.exports = (server) => {
 
-    ROUTES.forEach(route => {
-        if(route.middleware) {
-            server.app[route.type](`${PREFIX}${route.path}`, route.middleware, route.controller)
+    const getPath = (path, prefix) =>  prefix ? `${PREFIX}${path}` : path;
+
+    ROUTES.forEach(({path, type, controller, middleware, prefix = true}) => {
+        if(middleware) {
+            server.app[type](getPath(path, prefix), middleware, controller)
         } else {
-            server.app[route.type](`${PREFIX}${route.path}`, route.controller)
+            server.app[type](getPath(path, prefix), controller)
         }
     });
 
