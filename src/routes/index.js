@@ -3,8 +3,8 @@ const { ErrorController } = require("./../controllers/error")
 
 const PREFIX = "/api/v1"
 const ROUTES = [
-    { path: "/auth/login", type:"get", controller: LoginController},
-    { path: "*", type:"all", controller: ErrorController, prefix: false}
+    { type:"get", controller: LoginController, path: "/auth/login", },
+    { type:"all", controller: ErrorController, path: "*", prefix: false}
 ];
 
 module.exports = {PREFIX, ROUTES}

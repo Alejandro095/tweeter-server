@@ -1,13 +1,17 @@
+const { Pool } = require("./../loaders/postgresql")
 
-const LoginController = (req, res) => {
+
+const LoginController = async (req, res) => {
 
     // console.log(res)
 
-    return res.json("Hola mundo")
+    console.log(await (await Pool.query("SELECT * FROM test;")).rows);
+
+    return res.json(await (await Pool.query("SELECT * FROM test;")).rows)
 }
 
 const RegisterController = (req, res) => {
 
 }
 
-module.exports = {LoginController}
+module.exports = {LoginController, RegisterController}
