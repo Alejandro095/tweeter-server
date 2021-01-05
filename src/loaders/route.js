@@ -4,9 +4,9 @@ module.exports = (server) => {
 
     const getPath = (path, prefix) =>  prefix ? `${PREFIX}${path}` : path;
 
-    ROUTES.forEach(({path, type, controller, middleware, prefix = true}) => {
-        if(middleware) {
-            server.app[type](getPath(path, prefix), middleware, controller)
+    ROUTES.forEach(({path, type, controller, middlewares, prefix = true}) => {
+        if(middlewares) {
+            server.app[type](getPath(path, prefix), middlewares, controller)
         } else {
             server.app[type](getPath(path, prefix), controller)
         }
