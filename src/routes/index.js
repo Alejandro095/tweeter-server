@@ -1,7 +1,7 @@
 const { LoginController } = require("./../controllers/auth");
 const { ErrorController } = require("./../controllers/error")
 
-const PREFIX = "/api/v1"
+const PREFIX = "/api"
 const ROUTES = [
     // Auth routes
     { type:"all",  controller: LoginController, path: "/auth/login"},
