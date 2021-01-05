@@ -1,14 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tweeter</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet"></link>
+    <link rel="icon" href="/favicon.ico"></link>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Tweeter - Server</title>
 </head>
 <body>
-    <h1>Server is ready!</h1>
+    <main>
+        <div class="top">
+            <img class="image-top" src="/images/server.svg" alt="">
+            <h1>All Systems Are Up And Running</h1>
+            <p id="date"> Last update today, 8:00 PM </p>
+        </div>
+        <div class="services">
+
+            <div class="service">
+                <div class="left">
+                    <img src="images/server-icon.svg"></img>
+                </div>
+                <div class="middle">
+                    <h3>API</h3>
+                    <p>Everything working normally.</p>
+                </div>
+                <div class="right">
+                    <img src="images/check.svg"></img>
+                    <span>Available</span>
+                </div>
+            </div>
+
+            <div class="service">
+                <div class="left">
+                    <img src="images/server-icon.svg"></img>
+                </div>
+                <div class="middle">
+                    <h3>Database</h3>
+                    <p>Everything working normally.</p>
+                </div>
+                <div class="right">
+                    <img src="images/check.svg"></img>
+                    <span>Available</span>
+                </div>
+            </div>
+
+            <div class="service">
+                <div class="left">
+                    <img src="images/server-icon.svg"></img>
+                </div>
+                <div class="middle">
+                    <h3>WebSockets</h3>
+                    <p>Everything working normally.</p>
+                </div>
+                <div class="right">
+                    <img src="images/check.svg"></img>
+                    <span>Available</span>
+                </div>
+            </div>
+
+            <div class="service">
+                <div class="left">
+                    <img src="images/server-icon.svg"></img>
+                </div>
+                <div class="middle">
+                    <h3>Mailgun</h3>
+                    <p>Not implemented</p>
+                </div>
+                <div class="right warning-text">
+                    <img class="warning" src="images/warning.svg"></img>
+                    <span>Unavailable</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
 
     <script src="/socket.io/socket.io.js"></script>
-    <script src="/script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
