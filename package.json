@@ -7,7 +7,7 @@
     "dev": "cross-env NODE_ENV='development' nodemon src/server.js --exec babel-node",
     "build": "babel src --out-dir dist",
     "clean": "del-cli --force dist",
-    "start": "npm run clean && npm run build && cross-env NODE_ENV='production' node dist/server.js",
+    "start": "npm run build && cross-env NODE_ENV='production' node dist/server.js",
     "lint": "eslint src/**",
     "lint:fix": "eslint src/** --fix"
   },
