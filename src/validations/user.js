@@ -2,7 +2,7 @@ const { check } = require("express-validator");
 
 module.exports = {
 
-    login: () => [
+    loginValidation: () => [
         check("email", "El correo es requerido")
             .notEmpty()
             .isEmail()

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV='development' nodemon server.js",
     "prod": "cross-env NODE_ENV='production' node server.js",
+    "db:seed": "cross-env NODE_ENV='development' node src/database/seeds/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alejandro Tovar",
@@ -16,6 +17,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-useragent": "^1.0.15",
     "express-validator": "^6.9.2",
     "helmet": "^4.3.1",
     "jsonwebtoken": "^8.5.1",
@@ -25,6 +27,7 @@
     "socket.io": "^3.0.4"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "faker": "^5.1.0"
   }
 }
