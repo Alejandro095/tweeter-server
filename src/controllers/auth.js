@@ -1,7 +1,7 @@
-const { Pool } = require("./../loaders/postgresql")
+import { Pool } from "./../loaders/postgresql"
 
 
-const LoginController = async (req, res) => {
+export async function LoginController (req, res) {
 
     // console.log(res)
 
@@ -10,8 +10,6 @@ const LoginController = async (req, res) => {
     return res.json(await (await Pool.query("SELECT * FROM test;")).rows)
 }
 
-const RegisterController = (req, res) => {
+export async function RegisterController (req, res) {
 
 }
-
-module.exports = {LoginController, RegisterController}

@@ -1,4 +1,4 @@
-const morgan = require('morgan')
+import morgan from 'morgan'
 
 module.exports = (server) => {
 

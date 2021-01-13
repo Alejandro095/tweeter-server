@@ -1,4 +1,4 @@
-const io = require("socket.io");
+import io from "socket.io";
 
 let socket;
 

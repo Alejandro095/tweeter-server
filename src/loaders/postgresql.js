@@ -1,4 +1,7 @@
-const { Pool } = require("pg");
+import setEnviromentVariables from "./../config/env";
+setEnviromentVariables();
+
+import { Pool } from "pg";
 
 const database = new Pool({
     host: process.env.DATABASE_HOST,
