@@ -1,12 +1,11 @@
-import cors from "./cors";
-import helmet from "./helmet";
-import morgan from "./morgan";
+import cors from './cors';
+import helmet from './helmet';
+import morgan from './morgan';
+import route from './route';
+import general from './general';
+import { Sockets } from './socket';
+import { PostgresqlLoader } from './postgresql';
 
-import route from "./route";
-
-import general from "./general";
-
-import { socket } from "./socket";
-import { postgresql } from "./postgresql"
-
-export {cors, helmet , morgan, socket, route, postgresql, general}
+export {
+  cors, helmet, morgan, Sockets, route, PostgresqlLoader, general,
+};

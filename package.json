@@ -9,7 +9,7 @@
     "clean": "del-cli --force dist",
     "start": "npm run build && cross-env NODE_ENV='production' node dist/server.js",
     "lint": "eslint src/**",
-    "lint:fix": "src/** --fix" 
+    "lint:fix": "eslint src/** --fix" 
   },
   "author": "Alejandro Tovar",
   "license": "ISC",

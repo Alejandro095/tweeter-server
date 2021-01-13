@@ -1,16 +1,20 @@
-import io from "socket.io";
+import io from 'socket.io';
 
 let socket;
 
-module.exports = {
-    socket:  async (server) => {
-        socket = await io(server.http);
-        
-        socket.on("connect", client => {
-            console.log("::Nuevo cliente ", client.id); 
-        })
+async function Sockets(server) {
+  socket = await io(server.http);
 
-        return server
-    },
-    getSocket: () => socket
+  socket.on('connect', (client) => {
+    console.log('::Nuevo cliente ', client.id);
+  });
+
+  return server;
 }
+
+const getSocket = () => socket;
+
+export {
+  Sockets,
+  getSocket,
+};
