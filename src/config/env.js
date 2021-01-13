@@ -1,9 +1,9 @@
 import { config } from 'dotenv';
 
-const configurations = { path: '.env.production', debug: process.env.DEBUG };
+const configurations = { path: '.production.env', debug: process.env.DEBUG };
 
 if (process.env.NODE_ENV === 'development') {
-  configurations.path = '.env.development';
+  configurations.path = '.development.env';
 }
 
 export default function setEnviromentVariables() {

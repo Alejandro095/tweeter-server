@@ -1,7 +1,7 @@
 node_modules
 
-.env.development
-.env.production
+.development.env
+.production.env
 
 public/uploads/**
 
