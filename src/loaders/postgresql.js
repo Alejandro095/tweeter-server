@@ -1,4 +1,4 @@
-import setEnviromentVariables from "./../config/env";
+import setEnviromentVariables from "config/env";
 setEnviromentVariables();
 
 import { Pool } from "pg";

@@ -7,8 +7,6 @@ if(process.env.NODE_ENV === "development") {
 
 }
 
-console.log(process.env.NODE_ENV)
-
 export default function setEnviromentVariables() {
     return config(configurations)
 }

@@ -1,4 +1,4 @@
-import { PREFIX, ROUTES } from "./../routes/index"
+import { PREFIX, ROUTES } from "routes/index"
 
 module.exports = (server) => {
 

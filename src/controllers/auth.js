@@ -1,4 +1,4 @@
-import { Pool } from "./../loaders/postgresql"
+import { Pool } from "loaders/postgresql"
 
 
 export async function LoginController (req, res) {

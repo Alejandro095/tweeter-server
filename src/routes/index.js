@@ -1,9 +1,9 @@
-import { LoginController } from "./../controllers/auth";
-import { ErrorController } from "./../controllers/error";
+import { LoginController } from "controllers/auth";
+import { ErrorController } from "controllers/error";
 
 // Validators
-import { login } from "./../validations/user";
-import validationResult from "./../middleware/validation-result"
+import { login } from "validations/user";
+import validationResult from "middleware/validation-result"
 
 const PREFIX = "/api"
 const ROUTES = [

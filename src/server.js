@@ -4,9 +4,6 @@ import {cors, helmet, morgan, socket, route, postgresql, general} from "./loader
 
 setEnviromentVariables();
 
-
-console.log("sasa", process.env.PORT)
-
 Prepare([cors, helmet, morgan, general, route, postgresql, socket])
     .then( http => http.listen(process.env.PORT || 80))
     .then( () => console.log("Server is ready!", process.env.PORT))
