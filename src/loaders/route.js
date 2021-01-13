@@ -1,4 +1,4 @@
-const {PREFIX, ROUTES} = require("./../routes/index")
+import { PREFIX, ROUTES } from "./../routes/index"
 
 module.exports = (server) => {
 

@@ -1,9 +1,9 @@
-const { LoginController } = require("./../controllers/auth");
-const { ErrorController } = require("./../controllers/error")
+import { LoginController } from "./../controllers/auth";
+import { ErrorController } from "./../controllers/error";
 
 // Validators
-const { login } = require("./../validations/user");
-const validationResult = require("./../middleware/validation-result")
+import { login } from "./../validations/user";
+import validationResult from "./../middleware/validation-result"
 
 const PREFIX = "/api"
 const ROUTES = [
@@ -15,4 +15,4 @@ const ROUTES = [
     { type:"all",   controller: ErrorController, path: "*", prefix: false}
 ];
 
-module.exports = {PREFIX, ROUTES}
+export {PREFIX, ROUTES}

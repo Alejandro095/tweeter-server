@@ -1,8 +1,7 @@
-const { check } = require("express-validator");
+import { check } from "express-validator";
 
-module.exports = {
-
-    login: () => [
+export function login(){
+    return [
         check("email", "El correo es requerido")
             .notEmpty()
             .isEmail()
@@ -15,7 +14,8 @@ module.exports = {
             .withMessage("Tu contraseña debe de tener algun numero")
             .matches(/[!@#$%^&*(),.?":{}|<>]/)
             .withMessage("Tu contraseña debe de tener algun caracter especial")
-    ],
-    register: () => {},
-    update: () => {}
+    ]
 }
+
+export function Register() {};
+export function Login() {};

@@ -2,11 +2,10 @@
   "name": "tweeter-server",
   "version": "1.0.0",
   "description": "A RestAPI for Twitter clone (tweeter)",
-  "main": "server.js",
+  "main": "dist/server.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV='development' nodemon server.js",
-    "prod": "cross-env NODE_ENV='production' node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "cross-env NODE_ENV='development' nodemon src/server.js --exec babel-node",
+    "prod": "cross-env NODE_ENV='production' babel-node src/server.js"
   },
   "author": "Alejandro Tovar",
   "license": "ISC",
@@ -25,6 +24,10 @@
     "socket.io": "^3.0.4"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "cross-env": "^7.0.3"
   }
 }

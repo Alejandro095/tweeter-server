@@ -1,7 +1,7 @@
-const { validationResult } = require("express-validator");
+import { validationResult } from "express-validator";
 
 
-module.exports = (req, res, next) => {
+export default function CheackValidation(req, res, next) {
     const error = validationResult(req).formatWith(({ msg }) => msg);
 
     const hasError = !error.isEmpty();
