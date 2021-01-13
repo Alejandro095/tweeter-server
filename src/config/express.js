@@ -1,7 +1,10 @@
-const app = require("express")()
-const http = require("http").Server(app)
+import app from 'express';
+import { Server } from 'http';
 
-module.exports = async (loaders) => {
-    await loaders.forEach( async(loader) => await loader({app, http}) );
-    return http;
+const App = app();
+const http = Server(App);
+
+export default async function Loader(loaders) {
+  await loaders.forEach((loader) => loader({ app: App, http }));
+  return http;
 }

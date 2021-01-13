@@ -1,11 +1,11 @@
-const {config} = require("dotenv")
+import { config } from 'dotenv';
 
-const configurations = { path: ".env.production", debug: process.env.DEBUG }
+const configurations = { path: '.env.production', debug: process.env.DEBUG };
 
-if(process.env.NODE_ENV === "development") {
-    configurations.path = ".env.development"
+if (process.env.NODE_ENV === 'development') {
+  configurations.path = '.env.development';
 }
 
-module.exports = function setEnviromentVariables() {
-    return config(configurations)
+export default function setEnviromentVariables() {
+  return config(configurations);
 }

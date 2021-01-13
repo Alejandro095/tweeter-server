@@ -1,15 +1,15 @@
 module.exports = {
 
-    login: async () => {
+  login: async () => {
 
-    },
+  },
 
-    register: async () => {
+  register: async () => {
 
-    },
+  },
 
-    renewToken: async () => {
+  renewToken: async () => {
 
-    }
+  },
 
-}
+};

@@ -1,3 +1,3 @@
-const helmet = require("helmet");
+import helmet from 'helmet';
 
 module.exports = (server) => server.app.use(helmet());

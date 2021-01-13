@@ -1,21 +1,15 @@
-const { validationResult } = require("express-validator");
+import { validationResult } from 'express-validator';
 
+export default function CheackValidation(req, res, next) {
+  const error = validationResult(req).formatWith(({ msg }) => msg);
 
-module.exports = (req, res, next) => {
-    const error = validationResult(req).formatWith(({ msg }) => msg);
+  const hasError = !error.isEmpty();
 
-    const hasError = !error.isEmpty();
+  if (hasError) {
+    const messages = error.errors.map(({ msg, param }) => ({ msg, param }));
 
-    console.log()
-    
-    if (hasError) {
-
-        const messages = error.errors.map(({ msg, param }) => {
-            return {msg, param}
-        });
-
-        res.status(422).json({ errors: messages, status:422, ok:false });
-    } else {
-        next();
-    }
+    res.status(422).json({ errors: messages, status: 422, ok: false });
+  } else {
+    next();
+  }
 }

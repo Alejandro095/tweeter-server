@@ -1,32 +1,41 @@
+// import AuthService from "./../services/auth"
 
-import AuthService from "./../services/auth"
+// const LoginController = async (req, res) => {
 
-const LoginController = async (req, res) => {
+//     const { username, email, password} = req.body;
 
-    const { username, email, password} = req.body;
+//     const auth = await AuthService.login({username, email, password});
 
-    const auth = await AuthService.login({username, email, password});
+//     res.status(auth.succes ? 200 : 400).json(auth.response);
+// }
 
-    res.status(auth.succes ? 200 : 400).json(auth.response);
+// const RegisterController = async (req, res) => {
+
+//     const { username, email, password, firstname,lastname, bio, website, birthday } = req.body;
+
+//     const auth = await AuthService.register({ username, email, password, firstname,
+//     lastname, bio, website, birthday });
+
+//     res.status(auth.succes ? 200 : 400).json(auth.response);
+// }
+
+// const RenewController = async (req, res) => {
+
+//     const { username, email, password, firstname,lastname, bio, website, birthday } = req.body;
+
+//     const auth = await AuthService.register({ username, email, password, firstname,
+//     lastname, bio, website, birthday });
+
+//     res.status(auth.succes ? 200 : 400).json(auth.response);
+
+// }
+
+import { Pool } from 'loaders/postgresql';
+
+export async function LoginController(req, res) {
+  // console.log(res)
+
+  return res.json(await (await Pool.query('SELECT * FROM test;')).rows);
 }
 
-const RegisterController = async (req, res) => {
-
-    const { username, email, password, firstname,lastname, bio, website, birthday } = req.body;
-
-    const auth = await AuthService.register({ username, email, password, firstname,lastname, bio, website, birthday });
-
-    res.status(auth.succes ? 200 : 400).json(auth.response);
-}
-
-const RenewController = async (req, res) => {
-
-    const { username, email, password, firstname,lastname, bio, website, birthday } = req.body;
-
-    const auth = await AuthService.register({ username, email, password, firstname,lastname, bio, website, birthday });
-
-    res.status(auth.succes ? 200 : 400).json(auth.response);
-
-}
-
-module.exports = {LoginController, RegisterController, RenewController}
+export function RegisterController() {}

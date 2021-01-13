@@ -1,12 +1,11 @@
-
 module.exports = {
 
-    verify: () => {
+  verify: () => {
 
-    },
+  },
 
-    sing: () => {
+  sing: () => {
 
-    }
+  },
 
-}
+};

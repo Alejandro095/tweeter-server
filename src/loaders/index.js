@@ -1,12 +1,11 @@
-const cors = require("./cors");
-const helmet = require("./helmet");
-const morgan = require("./morgan");
+import cors from './cors';
+import helmet from './helmet';
+import morgan from './morgan';
+import route from './route';
+import general from './general';
+import { Sockets } from './socket';
+import { PostgresqlLoader } from './postgresql';
 
-const route = require("./route");
-
-const general = require("./general");
-
-const { socket } = require("./socket");
-const { postgresql } =require("./postgresql")
-
-module.exports = {cors, helmet , morgan, socket, route, postgresql, general}
+export {
+  cors, helmet, morgan, Sockets, route, PostgresqlLoader, general,
+};
