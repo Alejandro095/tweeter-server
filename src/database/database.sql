@@ -24,7 +24,8 @@ CREATE TABLE users (
 CREATE TABLE email_confirmation (
 
     id SERIAL,
-    code INTEGER,
+    code VARCHAR(200),
+    email VARCHAR(200),
     user_id INTEGER NOT NULL,
 
     CONSTRAINT pk_emailconfirmation_id PRIMARY KEY (id),
@@ -137,3 +138,18 @@ CREATE TABLE messages (
                 ON DELETE CASCADE
                 ON UPDATE CASCADE
 );  
+
+CREATE TABLE sessions (
+    id SERIAL,
+
+    user_id INTEGER NOT NULL,
+    uuid VARCHAR(200) NOT NULL UNIQUE,
+
+    CONSTRAINT pk_sessions PRIMARY KEY (id),
+
+    CONSTRAINT fk_sessions_users FOREIGN KEY (user_id) REFERENCES users(id)
+                ON DELETE CASCADE
+                ON UPDATE CASCADE
+);
+
+INSERT INTO sessions (user_id, uuid) VALUES (2, '817142d4-571b-11eb-ae93-0242ac130002');

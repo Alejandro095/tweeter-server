@@ -4,8 +4,10 @@ import morgan from './morgan';
 import route from './route';
 import general from './general';
 import { Sockets } from './socket';
-import { PostgresqlLoader } from './postgresql';
+import { postgre } from './postgresql';
+import cookies from './cookies';
+import compression from './compression';
 
 export {
-  cors, helmet, morgan, Sockets, route, PostgresqlLoader, general,
+  cors, helmet, morgan, Sockets, route, postgre, general, cookies, compression,
 };
