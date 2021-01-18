@@ -1,13 +1,15 @@
-import { Pool } from 'loaders/postgresql';
+import { pool } from 'loaders/services-loaders';
 
 export default class User {
   constructor(user) {
-    this.Pool = Pool;
+    this.Pool = pool();
     this.user = user;
+
+    console.log(this.Pool);
   }
 
   static async one(username, email) {
-    const result = await Pool.query('SELECT * FROM users WHERE email = $1 OR username = $2;', [email, username]);
+    const result = await this.Pool.query('SELECT * FROM users WHERE email = $1 OR username = $2;', [email, username]);
 
     if (result.rows.length) {
       return {

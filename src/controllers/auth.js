@@ -3,10 +3,6 @@ import * as JWTService from 'services/jwt';
 import * as SessionService from 'services/session';
 import EmailService from 'services/email';
 
-import setEnviromentVariables from 'config/env';
-
-setEnviromentVariables();
-
 const LoginController = async (req, res) => {
   try {
     const { username, email, password } = req.body;

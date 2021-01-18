@@ -2,6 +2,8 @@ import mailgun from 'mailgun-js';
 import setEnviromentVariables from 'config/env';
 import Email from 'models/email';
 import { v4 } from 'uuid';
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
 
 setEnviromentVariables();
 
@@ -28,11 +30,22 @@ export default class EmailService {
   }
 
   send() {
-    return this.mailgun.messages().send({
-      from: 'Tweeter <email@tweter.ga>',
-      to: this.email,
-      subject: 'Verificación de correo',
-      html: `<p>Hola ${this.user}! Tu codigo de verificación es ${this.code}<p>`,
+    // return this.mailgun.messages().send({
+    //   from: 'Tweeter <verify@tweter.ga>',
+    //   to: this.email,
+    //   subject: 'Verificación de correo',
+    //   html: this.render('verify', { code: '4052', image_logo: process.env.EMAIL_IMAGE }),
+    // });
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  render(type, data) {
+    let template = readFileSync(resolve(__dirname, `./../../public/templates/${type}.html`), 'utf8');
+
+    Object.keys(data).forEach((key) => {
+      template = template.replace(`{{${key}}}`, data[key]);
     });
+
+    return template;
   }
 }

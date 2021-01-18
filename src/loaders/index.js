@@ -1,13 +1,7 @@
-import cors from './cors';
-import helmet from './helmet';
-import morgan from './morgan';
-import route from './route';
-import general from './general';
-import { Sockets } from './socket';
-import { postgre } from './postgresql';
-import cookies from './cookies';
-import compression from './compression';
+import SecurityLoaders from './security-loaders';
+import GeneralLoaders from './general-loaders';
+import { ServicesLoaders } from './services-loaders';
 
-export {
-  cors, helmet, morgan, Sockets, route, postgre, general, cookies, compression,
-};
+export default function Loaders() {
+  return [SecurityLoaders, GeneralLoaders, ServicesLoaders];
+}
